@@ -13,7 +13,18 @@ const addStock = async (req, res) => {
         industry: req.body.industry
 
     }
-    let stock = await Stock.create(input_data)
+    let stock = await Stock.create(input_data).then(async (data) => { 
+        console.log(data)
+        let moreInput_data = {
+            lastSale: req.body.lastSale,
+            netChange: req.body.netChange,
+            percentChange: req.body.percentChange,
+            marketCap: req.body.marketCap,
+            volume: req.body.volume,
+            stockId: data.dataValues.id
+        }
+        let dynamicInfo = await DynamicInfo.create(moreInput_data).catch(e => console.log(e))
+    })
     res.status(200).send(stock)
 }
 

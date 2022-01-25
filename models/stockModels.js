@@ -16,19 +16,19 @@ module.exports = (sequelize, DataTypes) => {
         },
         country: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
         ipoYear: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: true
         },
         sector: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
         industry: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         }
 
     })

@@ -8,27 +8,27 @@ module.exports = (sequelize, DataTypes) => {
         },
         lastSale: {
             type: DataTypes.FLOAT,
-            allowNull: false
+            allowNull: true
         },
         netChange: {
             type: DataTypes.FLOAT,
-            allowNull: false
+            allowNull: true
         },
         percentChange: {
             type: DataTypes.FLOAT,
-            allowNull: false
+            allowNull: true
         },
         marketCap: {
             type: DataTypes.FLOAT,
-            allowNull: false
+            allowNull: true
         },
         volume: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: true
         },
         stockId: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: true
         }
     })
     return DynamicInfo
