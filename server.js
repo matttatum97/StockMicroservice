@@ -7,7 +7,8 @@ const { options } = require("./routes/stockRouter.js");
 const app = express();
 const port = process.env.PORT || 3000;
 app.use(cors({origin:"http://localhost:4200", optionsSuccessStatus:200, credentials:true}))
-app.use(express.json())
+app.use(express.json()) //For JSON requests
+app.use(express.urlencoded({extended: true}));
 app.use("/invest", investedRouter)
 app.use("/stocks", stockRouters)
 app.use("/dynamicInfo", dynamicInfoRouters)
