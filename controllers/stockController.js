@@ -5,7 +5,7 @@ const DynamicInfo = db.DynamicInfo
 
 const addStock = async (req, res) => {
     //const parsed = JSON.parse(req.body.symbol)
-    console.log("Req Body: ", req.body)
+    console.log("Req Body: ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^", req.body)
     let input_data = {
         symbol: req.body.symbol,
         name: req.body.name,
