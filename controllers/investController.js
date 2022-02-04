@@ -1,10 +1,9 @@
 const db = require("../models/index")
 const Investment = db.Invests
-console.log(db)
+
 
 const addInvestment = async (req, res) => {
     let input_data = {
-        id: req.body.id,
         userId: req.body.userId,
         stockId: req.body.stockId,
         numShares: req.body.numShares
@@ -14,7 +13,9 @@ const addInvestment = async (req, res) => {
 }
 
 const getAllInvestments = async (req, res) => {
+    let userId = req.params.userId
     let investments = await Investment.findAll({
+        where: {userId: userId},
         include: db.Stocks
     })
     res.status(200).send(investments)

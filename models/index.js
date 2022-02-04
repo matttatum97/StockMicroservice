@@ -7,6 +7,7 @@ let sequelize = null;
         sequelize = new Sequelize(process.env.DATABASE_URL, {
             dialect: 'postgres',
             protocol: 'postgres',
+            logging: true,
             dialectOptions: {
               ssl: {
                   require: true,
@@ -23,6 +24,7 @@ let sequelize = null;
             password: dbConfig.PASSWORD,
             dialect: dbConfig.dialect,
             host: dbConfig.HOST,
+            logging: true,
             dialectOptions: {
               ssl: {
                 require: true,
@@ -32,6 +34,7 @@ let sequelize = null;
         })
     }
 
+    
 sequelize.authenticate()
   .then(() => {
     console.log('connect to Postgres DB')

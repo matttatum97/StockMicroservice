@@ -4,8 +4,6 @@ const Stock = db.Stocks
 const DynamicInfo = db.DynamicInfo
 
 const addStock = async (req, res) => {
-    //const parsed = JSON.parse(req.body.symbol)
-    console.log("Req Body: ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^", req.body)
     let input_data = {
         symbol: req.body.symbol,
         name: req.body.name,
@@ -16,7 +14,6 @@ const addStock = async (req, res) => {
 
     }
     let stock = await Stock.create(input_data).then(async (data) => { 
-        console.log(data)
         let moreInput_data = {
             lastSale: req.body.lastSale,
             netChange: req.body.netChange,
